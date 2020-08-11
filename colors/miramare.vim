@@ -247,12 +247,12 @@ call s:HL('Macro', s:palette.cyan, s:palette.none)
 call s:HL('Identifier', s:palette.blue, s:palette.none)
 call s:HL('SpecialKey', s:palette.blue, s:palette.none)
 if s:configuration.disable_italic_comment
-  call s:HL('Comment', s:palette.light_grey, s:palette.none)
-  call s:HL('SpecialComment', s:palette.light_grey, s:palette.none)
+  call s:HL('Comment', s:palette.dark_grey, s:palette.none)
+  call s:HL('SpecialComment', s:palette.dark_grey, s:palette.none)
   call s:HL('Todo', s:palette.purple, s:palette.none)
 else
-  call s:HL('Comment', s:palette.light_grey, s:palette.none, 'italic')
-  call s:HL('SpecialComment', s:palette.light_grey, s:palette.none, 'italic')
+  call s:HL('Comment', s:palette.dark_grey, s:palette.none, 'italic')
+  call s:HL('SpecialComment', s:palette.dark_grey, s:palette.none, 'italic')
   call s:HL('Todo', s:palette.purple, s:palette.none, 'italic')
 endif
 call s:HL('Delimiter', s:palette.fg, s:palette.none)
