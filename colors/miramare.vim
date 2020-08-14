@@ -46,6 +46,7 @@ let s:palette = {
       \ 'purple':     ['#d3a0bc',   '175',  'Magenta'],
       \ 'grey':       ['#444444',   '245',  'LightGrey'],
       \ 'light_grey': ['#5b5b5b',   '245',  'LightGrey'],
+      \ 'lighter_grey': ['#6b6b6b', '245',  'LightGrey'],
       \ 'gold':       ['#d8caac',   '214',  'Yellow'],
       \ 'none':       ['NONE',      'NONE', 'NONE']
       \ }
@@ -213,7 +214,7 @@ if s:configuration.enable_italic
   call s:HL('Define', s:palette.purple, s:palette.none, 'italic')
   call s:HL('Conditional', s:palette.red, s:palette.none, 'bold,italic')
   call s:HL('Repeat', s:palette.red, s:palette.none, 'italic')
-  call s:HL('Keyword', s:palette.red, s:palette.none, 'italic')
+  call s:HL('Keyword', s:palette.red, s:palette.none, 'bold,italic')
   call s:HL('Typedef', s:palette.red, s:palette.none, 'italic')
   call s:HL('Exception', s:palette.red, s:palette.none, 'italic')
   call s:HL('Statement', s:palette.red, s:palette.none, 'italic')
@@ -246,15 +247,9 @@ call s:HL('Constant', s:palette.cyan, s:palette.none, 'bold')
 call s:HL('Macro', s:palette.cyan, s:palette.none)
 call s:HL('Identifier', s:palette.blue, s:palette.none)
 call s:HL('SpecialKey', s:palette.blue, s:palette.none)
-if s:configuration.disable_italic_comment
-  call s:HL('Comment', s:palette.dark_grey, s:palette.none)
-  call s:HL('SpecialComment', s:palette.dark_grey, s:palette.none)
-  call s:HL('Todo', s:palette.purple, s:palette.none)
-else
-  call s:HL('Comment', s:palette.dark_grey, s:palette.none, 'italic')
-  call s:HL('SpecialComment', s:palette.dark_grey, s:palette.none, 'italic')
-  call s:HL('Todo', s:palette.purple, s:palette.none, 'italic')
-endif
+call s:HL('Comment', s:palette.lighter_grey, s:palette.none)
+call s:HL('SpecialComment', s:palette.none, s:palette.none)
+call s:HL('Todo', s:palette.none, s:palette.purple, 'italic')
 call s:HL('Delimiter', s:palette.fg, s:palette.none)
 call s:HL('Ignore', s:palette.grey, s:palette.none)
 call s:HL('Underlined', s:palette.none, s:palette.none, 'underline')
